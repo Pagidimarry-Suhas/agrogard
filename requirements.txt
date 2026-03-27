@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+streamlit
+requests
+pillow
+python-dotenv
+torch
+torchvision
+pydantic
+pydantic-settings
+ultralytics
+opencv-python-headless
