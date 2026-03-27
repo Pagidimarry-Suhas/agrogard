@@ -53,37 +53,12 @@ uvicorn backend.app:app --reload --port 8000
 ```
 > The API will be running at http://localhost:8000.
 
+**5. Start the Frontend Application**
+In a new terminal window:
+```bash
+streamlit run frontend/streamlit_app.py
+```
+> The UI will pop open in your browser at http://localhost:8501.
+
 ---
-
-## 🌍 How to Deploy (To the Cloud for Free)
-
-Because AgroGard is split into a **Frontend** and a **Backend**, you must deploy them separately. The easiest and completely free way to do this is using **Render** for the API and **Streamlit Cloud** for the UI.
-
-### Step 1: Push Code to GitHub
-Ensure all your files (including `requirements.txt` and the `model/best.pt` file) are uploaded to a public or private repository on your GitHub account.
-
-### Step 2: Deploy the Backend (FastAPI) on Render
-1. Go to [Render.com](https://render.com) and sign in.
-2. Click **New +** > **Web Service**.
-3. Connect your GitHub account and select your `agrogard` repository.
-4. Settings to use:
-   - **Environment:** `Python 3`
-   - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `uvicorn backend.app:app --host 0.0.0.0 --port $PORT`
-5. Click **Create Web Service**. 
-6. Wait for it to build and deploy. Once live, copy your backend URL (e.g., `https://agrogard.onrender.com`).
-
-### Step 3: Deploy the Frontend (Streamlit)
-1. Go to [Streamlit Community Cloud](https://share.streamlit.io) and sign in with GitHub.
-2. Click **New App**.
-3. Select your `agrogard` repository.
-4. Set the **Main file path** to: `frontend/streamlit_app.py`
-5. Click **Advanced Settings**:
-   - Under **Secrets**, you must tell the frontend where your new Render backend is! Add the following line:
-     ```toml
-     API_URL = "https://agrogard.onrender.com"
-     ```
-     *(Make sure to replace the URL with your actual Render URL from Step 2)*
-6. Click **Deploy!**
-
-Your beautiful AgroGard dashboard will now be live on the internet! 🌿
+*Happy Farming!*
